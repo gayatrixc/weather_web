@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Dashboard</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-gradient-to-b from-blue-300 to-blue-100 min-h-screen text-gray-800">
+    <div class="container mx-auto px-4 py-8">
+      <header class="text-center mb-10">
+        <h1 class="text-4xl font-bold">Weather Forecast</h1>
+        <p class="text-lg mt-2">Stay updated with real-time weather data</p>
+      </header>
+
+      <!-- Current Weather -->
+      <section class="bg-white rounded-2xl shadow-lg p-6 mb-8">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+          <div class="text-center md:text-left">
+            <h2 class="text-3xl font-semibold" id="location">--</h2>
+            <p class="text-xl" id="condition">--</p>
+            <p class="text-gray-500" id="description">--</p>
+            <p class="text-5xl font-bold mt-2" id="temp">--°C</p>
+          </div>
+          <img id="weather-icon" class="w-32 h-32" src="" alt="Weather Icon" />
+        </div>
+      </section>
+
+      <!-- Forecast -->
+      <section class="mb-8">
+        <h3 class="text-xl font-bold mb-4">5-Day Forecast</h3>
+        <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+          <div class="forecast-card bg-white p-4 rounded-xl shadow text-center">
+            <p class="forecast-day font-medium">--</p>
+            <img class="forecast-icon mx-auto w-12 h-12" src="" alt="" />
+            <p class="forecast-temp-high text-lg font-bold">--°</p>
+            <p class="forecast-temp-low text-gray-500">--°</p>
+          </div>
+          <div class="forecast-card bg-white p-4 rounded-xl shadow text-center">
+            <p class="forecast-day font-medium">--</p>
+            <img class="forecast-icon mx-auto w-12 h-12" src="" alt="" />
+            <p class="forecast-temp-high text-lg font-bold">--°</p>
+            <p class="forecast-temp-low text-gray-500">--°</p>
+          </div>
+          <div class="forecast-card bg-white p-4 rounded-xl shadow text-center">
+            <p class="forecast-day font-medium">--</p>
+            <img class="forecast-icon mx-auto w-12 h-12" src="" alt="" />
+            <p class="forecast-temp-high text-lg font-bold">--°</p>
+            <p class="forecast-temp-low text-gray-500">--°</p>
+          </div>
+          <div class="forecast-card bg-white p-4 rounded-xl shadow text-center">
+            <p class="forecast-day font-medium">--</p>
+            <img class="forecast-icon mx-auto w-12 h-12" src="" alt="" />
+            <p class="forecast-temp-high text-lg font-bold">--°</p>
+            <p class="forecast-temp-low text-gray-500">--°</p>
+          </div>
+          <div class="forecast-card bg-white p-4 rounded-xl shadow text-center">
+            <p class="forecast-day font-medium">--</p>
+            <img class="forecast-icon mx-auto w-12 h-12" src="" alt="" />
+            <p class="forecast-temp-high text-lg font-bold">--°</p>
+            <p class="forecast-temp-low text-gray-500">--°</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Extra Info -->
+      <section class="grid md:grid-cols-2 gap-6">
+        <!-- Humidity -->
+        <div class="bg-white p-6 rounded-xl shadow">
+          <h4 class="text-lg font-bold mb-2">Humidity</h4>
+          <div class="flex items-center justify-between mb-2">
+            <p class="text-2xl font-semibold"><span id="humidity-value">--</span>%</p>
+            <p id="humidity-text" class="text-gray-500">--</p>
+          </div>
+          <div class="w-full bg-gray-200 h-2.5 rounded-full">
+            <div id="humidity-bar" class="h-2.5 rounded-full"></div>
+          </div>
+        </div>
+
+        <!-- Wind -->
+        <div class="bg-white p-6 rounded-xl shadow">
+          <h4 class="text-lg font-bold mb-2">Wind</h4>
+          <div class="flex items-center justify-between">
+            <p class="text-2xl font-semibold">
+              <span id="wind-speed">--</span> km/h
+            </p>
+            <p class="text-gray-500" id="wind-direction">--</p>
+            <div
+              class="w-8 h-8 transform"
+              id="wind-arrow"
+              style="background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Arrow-icon.png/240px-Arrow-icon.png') no-repeat center; background-size: contain"
+            ></div>
+          </div>
+        </div>
+
+        <!-- Air Quality -->
+        <div class="bg-white p-6 rounded-xl shadow">
+          <h4 class="text-lg font-bold mb-2">Air Quality</h4>
+          <div class="flex items-center justify-between mb-2">
+            <p class="text-2xl font-semibold" id="aqi-value">--</p>
+            <p id="aqi-text" class="text-gray-500">--</p>
+          </div>
+          <div class="w-full bg-gray-200 h-2.5 rounded-full">
+            <div id="aqi-bar" class="h-2.5 rounded-full"></div>
+          </div>
+        </div>
+
+        <!-- Sunrise & Sunset -->
+<div class="bg-white p-6 rounded-xl shadow">
+  <h4 class="text-lg font-bold mb-2">Sunrise & Sunset</h4>
+  <div class="flex justify-between items-center">
+    <!-- Sunrise -->
+    <div class="flex items-center gap-2">
+      <svg class="w-6 h-6 text-yellow-500" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M12 2a.75.75 0 0 1 .75.75V6a.75.75 0 0 1-1.5 0V2.75A.75.75 0 0 1 12 2Zm7.25 9a.75.75 0 0 1 0 1.5h-1.5a.75.75 0 0 1 0-1.5h1.5Zm-13 0a.75.75 0 0 1 0 1.5H4.75a.75.75 0 0 1 0-1.5H6.25Zm11.03-5.78a.75.75 0 1 1 1.06 1.06l-1.06 1.06a.75.75 0 1 1-1.06-1.06l1.06-1.06ZM6.72 5.22a.75.75 0 0 1 1.06 0L8.84 6.28a.75.75 0 0 1-1.06 1.06L6.72 6.28a.75.75 0 0 1 0-1.06ZM12 8a4.5 4.5 0 0 1 4.5 4.5H7.5A4.5 4.5 0 0 1 12 8Zm-9 6.75a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 14.75Zm2.72 3.03a.75.75 0 0 1 1.06 1.06l-1.06 1.06a.75.75 0 1 1-1.06-1.06l1.06-1.06Zm12.56 0 1.06 1.06a.75.75 0 0 1-1.06 1.06l-1.06-1.06a.75.75 0 1 1 1.06-1.06ZM12 17a.75.75 0 0 1 .75.75v3.5a.75.75 0 0 1-1.5 0v-3.5A.75.75 0 0 1 12 17Z"/>
+      </svg>
+      <div>
+        <p class="text-gray-500 text-sm">Sunrise</p>
+        <p class="text-xl font-semibold" id="sunrise">--</p>
+      </div>
+    </div>
+
+    <!-- Sunset -->
+    <div class="flex items-center gap-2">
+      <svg class="w-6 h-6 text-orange-400" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M3.75 15.75a.75.75 0 0 1 .75-.75h15a.75.75 0 0 1 0 1.5H4.5a.75.75 0 0 1-.75-.75ZM6.03 18.78a.75.75 0 1 0-1.06 1.06l1.06 1.06a.75.75 0 1 0 1.06-1.06L6.03 18.78Zm11.94 0-1.06 1.06a.75.75 0 0 0 1.06 1.06l1.06-1.06a.75.75 0 0 0-1.06-1.06ZM12 17a.75.75 0 0 0-.75.75v3.5a.75.75 0 0 0 1.5 0v-3.5A.75.75 0 0 0 12 17ZM12 2a.75.75 0 0 1 .75.75V7a.75.75 0 0 1-1.5 0V2.75A.75.75 0 0 1 12 2Zm0 6a4.5 4.5 0 0 1 4.5 4.5h-9A4.5 4.5 0 0 1 12 8Z"/>
+      </svg>
+      <div>
+        <p class="text-gray-500 text-sm">Sunset</p>
+        <p class="text-xl font-semibold" id="sunset">--</p>
+      </div>
+    </div>
+  </div>
+</div>
+    <script src="script.js"></script>
+  </body>
+</html>
