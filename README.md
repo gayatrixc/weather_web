@@ -8,7 +8,7 @@ A clean, responsive weather forecast app that shows:
 
 ## 🔗 Live Demo
 
-👉 [Click here to view the live site](https://yourusername.github.io/weather-website/)
+👉 [Click here to view the live site](https://gayatrixc.github.io/weather_web/)
 
 
 ## 🚀 Technologies Used
