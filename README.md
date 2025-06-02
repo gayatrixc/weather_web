@@ -30,4 +30,14 @@ A clean, responsive weather forecast app that shows:
 🔐 If you're using an API key for OpenWeatherMap, you may need to insert your own key in script.js.
 
 
+## 🙋‍♀️ Author
+
+**Gayatri**  
+🔗 [LinkedIn](https://www.linkedin.com/in/gayatri-xc/)   
+📍 Hyderabad, Telangana, India
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
+
+
 
